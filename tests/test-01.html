@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I’ve been a homeowner for 4 years. These are the biggest things I wish somebody told me on day one.</title>
+    <link rel="icon" href="https://static.ll-assets.com/variants/unpublished/dffd721afb8931eb8aef1f8f32bd8aa0/8f64d94a-93f2-493c-9cbd-8b574e0d6e27" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--
+      only the weights the page uses. Rubik is requested as its full weight range so Google serves the same
+      variable font file as the original page; a single weight gets a static file with slightly different glyph widths.
+      Crimson Pro has no italic on purpose, so <em> keeps the synthesized slant the original page shows.
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=Inter:wght@400;700&family=Rubik:wght@300..900&display=swap">
+    <style>
+      /*
+       * Mobile-first. Breakpoints match the original LanderLab page:
+       * tablet is wider than 576px, desktop is wider than 992px.
+       */
+      :root {
+        color-scheme: light;
+
+        --font-body: Inter, sans-serif;
+        --font-copy: "Crimson Pro", serif;
+        --font-heading: "IBM Plex Sans Condensed", sans-serif;
+        --font-button: Rubik, sans-serif;
+
+        --color-title: #0e2f4b;
+        --color-byline: #10661a;
+        --color-disclosure-link: #0049b8;
+        --color-copy: #252b2b;
+        --color-copy-wide: rgb(0 0 0 / 0.88);
+        --color-heading: #0a0832;
+        --color-button: #2445af;
+        --color-popup-text: #061f64;
+        --color-footer-background: rgb(228 228 228 / 0.22);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /*
+       * consecutive paragraphs are one blank line apart; a generated line break sizes the gap
+       * exactly like a line of text, so it tracks every line-height without a matching margin
+       */
+      .article-body p + p::before,
+      .legal-group p + p::before,
+      .disclosure-popup p + p::before {
+        content: "\A";
+        white-space: pre;
+      }
+
+      /* header */
+      .site-header {
+        padding: 8px 4% 0;
+        border-bottom: 1px solid rgb(0 0 0 / 0.07);
+      }
+
+      .site-header-inner {
+        display: flex;
+        align-items: center;
+        max-width: 1240px;
+        margin: 0 auto 10px;
+      }
+
+      .site-logo {
+        width: auto;
+        height: 29px;
+        margin-block: 10px;
+        object-fit: contain;
+      }
+
+      /* article */
+      .site-main {
+        padding: 10px 0 60px;
+      }
+
+      .article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        max-width: 1240px;
+        margin: 3px auto 0;
+        padding: 10px 15px 15px;
+      }
+
+      .article-title {
+        width: 100%;
+        margin: 0;
+        color: var(--color-title);
+        font-family: var(--font-heading);
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      .article-byline {
+        width: 100%;
+        margin: 0;
+        color: var(--color-byline);
+        font-family: var(--font-heading);
+        font-size: 16px;
+      }
+
+      .article-hero {
+        width: 724px;
+        height: 171px;
+        margin-top: 12px;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .disclosure-button {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--color-disclosure-link);
+        font-family: var(--font-body);
+        font-size: 14px;
+        line-height: normal;
+        text-align: start;
+      }
+
+      /* the 0.5em gap, not a space character, separates the label from the date */
+      .article-updated {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 12px;
+      }
+
+      .article-body {
+        width: 713px;
+        max-width: 100%;
+      }
+
+      .article-body p {
+        margin: 0;
+        color: var(--color-copy);
+        font-family: var(--font-copy);
+        font-size: 19.5px;
+        line-height: 27.9px;
+      }
+
+      .article-body > p:first-child {
+        margin-top: 20px;
+      }
+
+      .article-body h2 {
+        margin: 54px 0 20px;
+        color: var(--color-heading);
+        font-family: var(--font-heading);
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      .steps {
+        margin: 0;
+        padding: 25px 20px 22px 45px;
+      }
+
+      .steps li {
+        color: var(--color-copy);
+        font-family: var(--font-copy);
+        font-size: 19.5px;
+        line-height: 1.46;
+      }
+
+      .steps li + li {
+        margin-top: 10px;
+      }
+
+      /* offer card */
+      .offer-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        margin: 20px 0 45px;
+        padding: 15px;
+        border-top-left-radius: 21px;
+        box-shadow: 0 7px 29px rgb(100 100 111 / 0.2);
+      }
+
+      .offer-brand {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .offer-logo {
+        width: 211px;
+        height: auto;
+      }
+
+      .offer-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        width: max-content;
+        min-width: min-content;
+        max-width: 100%;
+        /* 17px of spacing plus the 5px line gap the original page left under its inline logo image */
+        margin-top: 22px;
+        padding: 12px 40px;
+        border-radius: 7px;
+        background-color: var(--color-button);
+        color: #fff;
+        font-family: var(--font-button);
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow 0.15s ease-in-out;
+      }
+
+      .offer-button:focus-visible {
+        box-shadow: inset 0 0 10000px rgb(0 0 0 / 0.1);
+      }
+
+      @media (hover: hover) {
+        .offer-button:hover {
+          box-shadow: inset 0 0 10000px rgb(0 0 0 / 0.1);
+        }
+      }
+
+      .offer-details {
+        padding: 15px;
+      }
+
+      .offer-name {
+        margin: 0;
+        font-family: var(--font-heading);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      .offer-points {
+        margin: 10px 0 0;
+        padding: 0;
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 28px;
+        list-style: none;
+      }
+
+      /* footer */
+      .site-footer {
+        padding: 20px 4% 0;
+        background-color: var(--color-footer-background);
+      }
+
+      .site-footer-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 15px;
+        font-family: var(--font-body);
+        font-size: 12px;
+        line-height: 24px;
+      }
+
+      .footer-logo {
+        width: 100%;
+        height: 37px;
+        object-fit: contain;
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+        padding: 15px;
+        list-style: none;
+      }
+
+      .footer-links li {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .site-footer-inner p {
+        margin: 0;
+      }
+
+      /* advertiser disclosure popup */
+      .disclosure-popup {
+        display: none;
+        width: 100%;
+        min-width: 250px;
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 70px);
+        padding: 50px 20px;
+        border: 0;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+        color: var(--color-popup-text);
+        font-family: var(--font-body);
+        font-size: 16px;
+      }
+
+      /* browsers without the popover API never match this, so the popup stays hidden there */
+      .disclosure-popup:popover-open {
+        display: block;
+      }
+
+      .disclosure-popup::backdrop {
+        background-color: rgb(0 0 0 / 0.45);
+      }
+
+      .disclosure-popup p {
+        margin: 0;
+      }
+
+      /* fixed to the viewport corner, outside the white box */
+      .disclosure-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 27px;
+        height: 27px;
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+
+      .disclosure-close svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      body:has(.disclosure-popup:popover-open) {
+        overflow: hidden;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .disclosure-popup:popover-open {
+          transition: opacity 0.1s ease-in-out;
+        }
+
+        @starting-style {
+          .disclosure-popup:popover-open {
+            opacity: 0;
+          }
+        }
+      }
+
+      /* the byline is the only element with its own 500px breakpoint */
+      @media (width > 500px) {
+        .article-byline {
+          font-size: 17px;
+        }
+      }
+
+      /* tablet */
+      @media (width > 576px) {
+        .site-header {
+          padding: 6px 2% 0;
+        }
+
+        /* the logo box scales with the header width, and the image is contained inside it */
+        .site-logo {
+          width: 10.806%;
+          height: 30px;
+          margin-block: 0;
+        }
+
+        .site-main {
+          padding-inline: 2%;
+        }
+
+        .article {
+          padding-inline: 50px;
+        }
+
+        .article-title {
+          font-size: 40px;
+          line-height: 48px;
+        }
+
+        .article-hero {
+          height: 288px;
+        }
+
+        .disclosure-button {
+          font-size: 13px;
+        }
+
+        .article-body p {
+          color: var(--color-copy-wide);
+          font-size: 21px;
+          line-height: 33.2px;
+        }
+
+        .article-body h2 {
+          color: #000;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 40px;
+        }
+
+        .steps li {
+          color: #000;
+          font-size: 21px;
+        }
+
+        .offer-name {
+          font-size: 24px;
+          line-height: 32px;
+        }
+
+        .offer-points {
+          font-size: 18px;
+        }
+
+        .site-footer {
+          padding-inline: 2%;
+        }
+
+        .site-footer-inner {
+          padding-inline: 10px;
+        }
+
+        .disclosure-popup {
+          width: 450px;
+          max-width: calc(100vw - 70px);
+        }
+      }
+
+      /* desktop */
+      @media (width > 992px) {
+        .article {
+          padding-inline: 273px;
+        }
+
+        .article-title {
+          font-size: 39px;
+          line-height: 37.6px;
+        }
+
+        .offer-card {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        }
+
+        .site-footer-inner {
+          padding-inline: 150px;
+        }
+
+        .footer-links {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .disclosure-popup {
+          max-width: calc(100vw - 100px);
+          padding: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <img class="site-logo" src="https://static.ll-assets.com/variants/unpublished/286face921923c2b81566a8e6a96f265/4b326ed4-45b5-4a75-ee91-fbe67988e100.webp" alt="Betterbuck" width="421" height="143">
+      </div>
+    </header>
+
+    <main class="site-main">
+      <article class="article">
+        <h1 class="article-title">I’ve been a homeowner for 4 years. These are the biggest things I wish somebody told me on day one.</h1>
+        <!-- LanderLab fills [[...]] tokens when it serves the page -->
+        <p class="article-byline">By Ben F. |&nbsp;[[month]]/[[day]]/[[year]]</p>
+        <img class="article-hero" src="https://static.ll-assets.com/variants/unpublished/286face921923c2b81566a8e6a96f265/bf5d11bb-e213-4cdb-cbbc-9f4333ed8d00.webp" alt="" width="6000" height="3000" fetchpriority="high">
+        <button class="disclosure-button" type="button" popovertarget="advertiser-disclosure">Advertiser Disclosure</button>
+        <p class="article-updated"><span>Last updated</span> <span>[[currentdate]]</span></p>
+
+        <!-- the main-content id is kept for LanderLab's account-level click tracking, which targets "#main-content a" -->
+        <div class="article-body" id="main-content">
+          <p>I thought I had a pretty good idea of what I was getting into when I bought my first home.</p>
+          <p>Turns out, knowing these things from day one could’ve saved me a lot of money and a few headaches along the way.</p>
+
+          <section>
+            <h2>1. Please, please look for cheaper home insurance companies once a year. It can save you SO much money</h2>
+            <p>I asked my parents to do this and it literally saved them $1,700/year (and it took around 15 minutes).</p>
+            <p>Most people have <em>no</em> idea that they're overpaying for home insurance. The avg. household who switches saves $1,034/year.</p>
+            <p>Stop throwing that money away!</p>
+            <p>Pull up a site like <a href="https://go.readbetterbuck.org/click/6" target="_blank" rel="sponsored">StopOverpaying.org</a> and it'll do most of the work for you. You enter info about your house and it'll give you some insurance options to look at.</p>
+            <p>Takes 2-3 minutes, and there are no spam calls, etc.</p>
+            <p><a href="https://go.readbetterbuck.org/click/6" target="_blank" rel="sponsored">Try it out</a>.</p>
+          </section>
+
+          <section>
+            <h2>2. You might also be overpaying for car insurance</h2>
+            <p>I used to just let my car insurance renew every year without thinking much about it. Then I finally checked what else was out there and ended up <strong>saving $1,300/year.</strong></p>
+            <p>Turns out I wasn't the only one overpaying. A study found the average person who switches saves $461/year.<a href="https://www.consumerreports.org/money/car-insurance/why-most-drivers-switch-car-insurance-how-much-they-save-a7899329065/?utm_source=chatgpt.com" target="_blank">²</a></p>
+            <p>And you don't have to wait until your policy expires to switch.</p>
+            <p>I used <a href="https://go.readbetterbuck.org/click/1" target="_blank" rel="sponsored">StopOverpaying.org</a> to check my car insurance options too. It's free, takes about 2 minutes, and there's no obligation to switch.</p>
+            <p>Worth checking what you could save before your next renewal.</p>
+            <p><a href="https://go.readbetterbuck.org/click/1" target="_blank" rel="sponsored">Check your options here</a>.</p>
+          </section>
+
+          <section>
+            <h2>3. Get yourself a financial advisor</h2>
+            <p>Most people don’t have one, and it’s typically a huge mistake.</p>
+            <p>Sure, you can manage things on your own if you want to, but most people don’t have the time to actually do things right. There are huge benefits to having somebody pay attention to your money all the time.</p>
+            <p><strong>People with financial advisors tend to beat the market by ~3%/year</strong> (according to a 2019 Vanguard Study). That can make a huge difference over time.</p>
+            <p><strong>But more important: </strong>a good advisor will handle ALL of the annoying retirement stuff &amp; bizarro tax implications you would have never thought of</p>
+            <p>If you don’t know a financial advisor personally, use a comparison site (like <a href="https://go.readbetterbuck.org/click/4" target="_blank" rel="sponsored">Datalign</a>) and find somebody near you that has good reviews.</p>
+            <p>Or if you want something easier,&nbsp;<a href="https://go.readbetterbuck.org/click/4" target="_blank" rel="sponsored">here’s a quiz</a> you can fill out that can find an advisor/planner based on your reqs.</p>
+          </section>
+
+          <section>
+            <h2>4.&nbsp;Your home equity is a gold-mine. If you need funds, stop taking out high-interest loans.</h2>
+            <p>If you own your home but are low on funds, you might want to look into a HELOC (<a href="https://go.readbetterbuck.org/click/2" target="_blank" rel="sponsored">home equity line of credit</a>). Instead of borrowing from your bank, you can essentially borrow from yourself (by tapping into your home's equity).</p>
+            <p>They may have lower interest rates and more flexible terms that a typical loan would.</p>
+            <p>Here’s a free page you can use to see how much you could access: <a href="https://go.readbetterbuck.org/click/2" target="_blank" rel="sponsored">link</a>.</p>
+          </section>
+
+          <section>
+            <h2>5. You don’t have to pay off your debt by yourself</h2>
+            <p>If you’ve got $10k+ in unsecured debt (think credit cards, medical bills, etc), you could use a debt relief program and potentially save up to 45%.</p>
+            <p>Here’s how to quickly see if you qualify for debt relief:</p>
+            <ul class="steps">
+              <li>Head to National Debt Relief’s site&nbsp;<a href="https://go.readbetterbuck.org/click/7" target="_blank" rel="sponsored">here</a></li>
+              <li>See what debt relief options are available</li>
+              <li>Find out if you qualify</li>
+            </ul>
+            <p>Simple as that. You could end up paying less than you owed and be debt free in 24-48 months.</p>
+            <p>&nbsp;Here’s a link to <a href="https://go.readbetterbuck.org/click/7" target="_blank" rel="sponsored">National Debt Relief</a>.</p>
+          </section>
+
+          <section>
+            <h2>6. Stop paying for subscriptions you don't use</h2>
+            <p>We’ve all signed up for free trials and forgotten to cancel them. Stop paying for services you aren’t using!</p>
+            <p>Take a minute and get yourself a good cancellation app: I like Rocket Money (<a href="https://go.readbetterbuck.org/click/16" target="_blank" rel="sponsored">link here</a>).</p>
+            <p>It’s an app that will put together a list of your subscriptions so you can pick/choose which ones to cancel.</p>
+            <p>They also have a premium service that will cancel them for you, if you’d like.</p>
+            <p><a href="https://go.readbetterbuck.org/click/16" target="_blank" rel="sponsored">Here’s a link</a>&nbsp;(it’s free).</p>
+          </section>
+
+          <section>
+            <h2>7. Protect yourself from a huge car repair bill.</h2>
+            <p>If your manufacturer’s warranty has expired, one unexpected repair can get expensive fast.</p>
+            <p>A vehicle service contract can help with the cost of certain covered repairs, instead of leaving you to deal with the whole bill yourself.</p>
+            <p><a href="https://go.readbetterbuck.org/click/44" target="_blank" rel="sponsored">Endurance</a> has different protection plans depending on your vehicle and the level of coverage you’re looking for.</p>
+            <p>Here’s a page you can use to see what options are available for your car: <a href="https://go.readbetterbuck.org/click/44" target="_blank" rel="sponsored">link</a></p>
+          </section>
+
+          <section>
+            <h2>8. Letting IRS debt sit while penalties keep making it more expensive.</h2>
+            <p>Owing the IRS is stressful enough, but penalties and interest can make what you owe even more expensive over time.</p>
+            <p>Depending on your situation, there may be a few different ways to deal with tax debt.</p>
+            <p>That could mean setting up a payment plan, seeing if you can get certain penalties reduced, or looking into other ways to deal with what you owe.</p>
+            <p>If you’re not sure where to start, <a href="https://go.readbetterbuck.org/click/39" target="_blank" rel="sponsored">Five Star Tax Resolution</a> is one company that can help you look at your tax debt and understand what you might be able to do about it.</p>
+            <p>You’ll share some information about what you owe, and they can help you figure out what to do from there.</p>
+            <p>Not everyone will qualify for the same kind of help, but it’s worth finding out what you can do rather than letting the debt sit and potentially get more expensive.</p>
+            <p>See what you might be able to do about your tax debt <a href="https://go.readbetterbuck.org/click/39" target="_blank" rel="sponsored">here</a></p>
+          </section>
+
+          <section>
+            <h2>9. Don’t pay for home repairs out of pocket (let a company pay them for you instead).</h2>
+            <p>Picture this: your trusty furnace suddenly throws a tantrum in the dead of winter, leaving you shivering and facing a repair bill that could cost you way more than you anticipated.</p>
+            <p>If you had a home warranty, you could be covered the next time something breaks down. It’s like having a safety net for your home (think plumbing, electrical, appliances, etc).</p>
+            <p>If you don’t have one yet,&nbsp;<a href="https://go.readbetterbuck.org/click/43" target="_blank" rel="sponsored">Choice Home Warranty</a>&nbsp;is one of the bigger companies out there.</p>
+            <p>Bonus: home warranty companies usually have qualified, pre-vetted maintenance and repair workers ready to get the job done (which is one less thing to worry about).</p>
+            <p>If you’re interested just&nbsp;<a href="https://go.readbetterbuck.org/click/43" target="_blank" rel="sponsored">enter your zip code here</a>&nbsp;to find a home warranty plan. It could save you a bunch of money the next time something breaks down.</p>
+          </section>
+
+          <section>
+            <h2>10. Sell your house as-is for cash</h2>
+            <p>Listing a home can take time. Repairs, staging, open houses, negotiations - it can drag on for months.</p>
+            <p>Some homeowners skip that entirely and look for cash buyers instead.</p>
+            <p>Platforms like <a href="https://go.readbetterbuck.org/click/26" target="_blank" rel="sponsored">Sold.com</a> connect homeowners with investors who may be willing to buy the home as-is. That means no repairs, no showings, and no waiting for bank financing.</p>
+            <p>In many cases you can see an offer within 1-2 days.</p>
+            <p>Here’s a quick tool you can use to see what investors might offer for your home: <a href="https://go.readbetterbuck.org/click/26" target="_blank" rel="sponsored">link</a></p>
+          </section>
+
+          <section>
+            <h2>11. Don’t pay for home repairs out of pocket (let a company pay them for you instead).</h2>
+            <p>If you're not banking with SoFi, you could be leaving cash on the table.</p>
+            <p>New <a href="https://go.readbetterbuck.org/click/9" target="_blank" rel="sponsored">SoFi Checking and Savings</a> members can earn up to a $400 bonus after setting up eligible direct deposit when they open a SoFi Checking and Savings account and set up Eligible Direct Deposit.</p>
+            <p>Here's how it works: After your first eligible direct deposit, SoFi looks at the total deposited over the following 25 days.</p>
+            <p>Deposits of $1,000 to $4,999.99 earn a $50 bonus, while $5,000 or more earns the full $400.</p>
+            <p>The amount you receive depends on how much is deposited during that time.</p>
+            <p>The bonus isn't the only benefit.&nbsp; No account fees, no service or maintenance fees. Just a straightforward way to get rewarded for moving your paycheck.</p>
+            <p>And here’s the kicker: your account could earn up to 3.30% APY with eligible direct deposit or $5,000 or more in qualifying deposits during the 31-day evaluation period — plus a 1.10% APY boost for up to six months on new accounts, bringing your savings APY up to 4.40%. Terms apply.</p>
+            <p>Combine that with the signup bonus, that gives you the chance to earn a bonus upfront while also earning interest on the money in your account.</p>
+            <p>Offer will end December 31, 2026.</p>
+            <p><a href="https://go.readbetterbuck.org/click/9" target="_blank" rel="sponsored">Open your account and earn up to a $400 bonus</a></p>
+          </section>
+        </div>
+
+        <aside class="offer-card" aria-labelledby="offer-name">
+          <div class="offer-brand">
+            <a href="https://go.readbetterbuck.org/click/2" rel="sponsored">
+              <img class="offer-logo" src="https://static.ll-assets.com/variants/unpublished/286face921923c2b81566a8e6a96f265/acc36753-6f08-4b00-6e78-e4d4043a6300.webp" alt="LendingTree" width="1359" height="497" loading="lazy" decoding="async">
+            </a>
+            <a class="offer-button" href="https://go.readbetterbuck.org/click/2" target="_blank" rel="sponsored">Compare offers</a>
+          </div>
+          <div class="offer-details">
+            <h2 class="offer-name" id="offer-name">LendingTree</h2>
+            <ul class="offer-points">
+              <li>- Tap into your home equity for quick access to funds</li>
+              <li>- Potentially find lower interest rates and flexible repayment terms</li>
+              <li>- Only pay interest on what you spend</li>
+            </ul>
+          </div>
+        </aside>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <img class="footer-logo" src="https://static.ll-assets.com/variants/unpublished/286face921923c2b81566a8e6a96f265/4b326ed4-45b5-4a75-ee91-fbe67988e100.webp" alt="Betterbuck" width="421" height="143" loading="lazy" decoding="async">
+
+        <nav aria-label="Betterbuck">
+          <ul class="footer-links">
+            <li><a href="https://betterbuck.net/content/about-us" target="_blank">About Us</a></li>
+            <li><a href="https://betterbuck.net/content/privacy-policy/" target="_blank">Privacy Policy</a></li>
+            <li><a href="https://betterbuck.net/content/privacy-policy/" target="_blank">Terms of Service</a></li>
+            <li><a href="mailto:info@betterbuck.net" target="_blank">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="legal-group">
+          <p>Disclosure: "Debt-Free" applies only to enrolled credit cards, personal loans, and medical bills. Not mortgages, car loans, or other debts. Clients who are able to stay with the program and get all their debt settled realize approximate savings of 45% before fees, or 20% including our fees, over 24 to 48 months. Results vary.</p>
+          <p>1If you respond via the Internet, the majority of applications are responded to in less than 15 seconds. Your actual response time may vary depending on the Internet connection and volume of submitted requests. We may not be able to give you an immediate answer in every instance.</p>
+        </div>
+        <p>Terms and conditions apply. LendingTree, LLC. NMLS# 1136</p>
+        <p>The option to skip payment(s) is not guaranteed and is subject to loan terms as determined by new lender.</p>
+        <div class="legal-group">
+          <p>1. Up to $300 Bonus Tiered Disclosure<br>New and existing Checking and Savings members who have not previously enrolled in Direct Deposit with SoFi are eligible to earn a cash bonus of either $50 (with at least $1,000 total Eligible Direct Deposits received within 25 calendar days of your first Eligible Direct Deposit of $1 or more) OR $300 (with at least $5,000 total Eligible Direct Deposits received within 25 calendar days of your first Eligible Direct Deposit of $1 or more). Cash bonus amount will be based on the total amount of Eligible Direct Deposit. If you have satisfied the Eligible Direct Deposit requirements but have not received a cash bonus in your Checking account, please contact us at 855-456-7634 with the details of your Eligible Direct Deposit. Direct Deposit Promotion begins on 12/7/2023 and will be available through 12/31/2026. Full terms at <a href="https://sofi.com/banking" target="_blank">sofi.com/banking</a>. SoFi Checking and Savings is offered through SoFi Bank, N.A., Member FDIC.</p>
+          <p>SoFi members with Eligible Direct Deposit can earn 3.30% annual percentage yield (APY) on savings balances (including Vaults) and 0.50% APY on checking balances. There is no minimum Eligible Direct Deposit amount required to qualify for the 3.30% APY for savings (including Vaults). Members without Eligible Direct Deposit will earn 1.00% APY on savings balances (including Vaults) and 0.50% APY on checking balances. Interest rates are variable and subject to change at any time.</p>
+          <p>These rates are current as of 12/23/25. There is no minimum balance requirement. Fees may reduce earnings. Additional information can be found at <a href="https://www.sofi.com/legal/banking-rate-sheet" target="_blank">http://www.sofi.com/legal/banking-rate-sheet</a>.</p>
+          <p>2. APY disclosures<br>Annual percentage yield (APY) is variable and subject to change at any time. Rates are current as of 12/23/25. There is no minimum balance requirement. Fees may reduce earnings. Additional rates and information can be found at <a href="https://www.sofi.com/legal/banking-rate-sheet" target="_blank">https://www.sofi.com/legal/banking-rate-sheet</a></p>
+          <p>3. Fee Policy<br>We do not charge any account, service or maintenance fees for SoFi Checking and Savings. We do charge a transaction fee to process each outgoing wire transfer. SoFi does not charge a fee for incoming wire transfers, however the sending bank may charge a fee. Our fee policy is subject to change at any time. See the SoFi Bank Fee Sheet for details at <a href="https://sofi.com/legal/banking-fees/" target="_blank">sofi.com/legal/banking-fees/</a>.</p>
+          <p>4. <b>Additional FDIC Insurance</b><br>SoFi Bank is a member FDIC and does not provide more than $250,000 of FDIC insurance per depositor per legal category of account ownership, as described in the FDIC’s regulations. Any additional FDIC insurance is provided by the SoFi Insured Deposit Program. Deposits may be insured up to $3M through participation in the program. See full terms at <a href="https://sofi.com/banking/fdic/sidpterms" target="_blank">SoFi.com/banking/fdic/sidpterms</a>. See list of participating banks at <a href="https://sofi.com/banking/fdic/participatingbanks">SoFi.com/banking/fdic/participatingbanks</a>.</p>
+          <p>5. ATM Access<br>We’ve partnered with Allpoint to provide you with ATM access at any of the 55,000+ ATMs within the Allpoint network. You will not be charged a fee when using an in-network ATM, however, third-party fees may be incurred when using out-of-network ATMs. SoFi’s ATM policies are subject to change at our discretion at any time.</p>
+          <p>6. Early Access to Direct Deposit Funds<br>Early access to direct deposit funds is based on the timing in which we receive notice of impending payment from the Federal Reserve, which is typically up to two days before the scheduled payment date, but may vary.</p>
+          <p>7. Overdraft Coverage<br>Overdraft Coverage is a feature automatically offered to SoFi Checking and Savings account holders who receive at least $1,000 or more in Eligible Direct Deposits within a rolling 31 calendar day period on a recurring basis. Eligible Direct Deposit is defined on the SoFi Bank Rate Sheet, available at <a href="https://www.sofi.com/legal/banking-rate-sheet" target="_blank">https://www.sofi.com/legal/banking-rate-sheet</a>. Members enrolled in Overdraft Coverage may be covered for up to $50 in negative balances on SoFi Bank debit card purchases only. Overdraft Coverage does not apply to P2P transfers, bill payments, checks, or other non-debit card transactions. Members with a prior history of unpaid negative balances are not eligible for Overdraft Coverage. Eligibility for Overdraft Coverage is determined by SoFi Bank in its sole discretion. Members can check their enrollment status, if eligible, at any time by logging into their account through the SoFi app or on the SoFi website.</p>
+          <p>8. 1.10% Savings APY Boost (Offer 170.5)<br>Earn up to 4.40% Annual Percentage Yield (APY) on one SoFi Savings account with a 1.10% APY Boost (added to the 3.30% APY as of 10/20/26) for up to 6 months. Open your first SoFi Checking and Savings account and receive eligible direct deposits OR qualifying deposits of $5,000 every 31 days by 12/31/27. Rates are variable, subject to change. Terms apply at <a href="#">sofi.com/banking#4</a>. SoFi Bank, N.A. Member FDIC.</p>
+        </div>
+        <p>Important Disclosures: This website does not constitute an offer or solicitation to lend. The operator of this website is NOT A LENDER, does not make loan or credit decisions, and does not broker loans. The operator of this website is not an agent or representative of any lender. We are a lead generator. This website’s aim is to provide lenders with information about prospective consumer borrowers. We are compensated by lenders for this service.</p>
+        <p>Information about loans: Not all lenders can provide loan amounts up to the maximum amount that is advertised. The maximum amount you may borrow from any lender is determined by the lender based on its own policies, which can vary, and on your creditworthiness. The time to receive loan proceeds varies among lenders, and in some circumstances faxing of loan request form materials and other documents may be required. Submitting your information online does not guarantee that you will be approved for a loan.</p>
+        <p>Every lender has its own terms and conditions and renewal policy, which may differ from lender to lender. You should review your lender’s terms and renewal policy before signing the loan agreement. Late payments of loans may result in additional fees or collection activities, or both.</p>
+        <p>By using this website or services, you represent and warrant that you are at least 18 years old, that you are a resident of the United States, and that you are not a resident of any state where the loan you are applying for is illegal.</p>
+      </div>
+    </footer>
+
+    <!-- native popover: opens from the "Advertiser Disclosure" button, closes on Esc, outside click, or the X; needs no JavaScript -->
+    <div class="disclosure-popup" id="advertiser-disclosure" popover role="dialog" aria-label="Advertiser disclosure">
+      <button class="disclosure-close" type="button" popovertarget="advertiser-disclosure" popovertargetaction="hide" aria-label="Close" autofocus>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9.16992 14.83L14.8299 9.16998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M14.8299 14.83L9.16992 9.16998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <p>We are compensated by the companies listed on this page.</p>
+      <p>This compensation may influence the selection, appearance, and order&nbsp;of appearance of the offers listed below, which allows us to provide free articles like this one.</p>
+      <p>The offers shown below do not include all&nbsp;financial services companies or all of their available product and&nbsp;service offerings.</p>
+    </div>
+  </body>
+</html>
